@@ -133,12 +133,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Consumer.cpp" />
     <ClCompile Include="MainForm.cpp" />
+    <ClCompile Include="MyMap.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Consumer.h" />
     <ClInclude Include="MainForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="MyMap.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
