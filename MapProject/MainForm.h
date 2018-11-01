@@ -19,7 +19,7 @@ namespace MapProject {
 	public ref class MainForm : public System::Windows::Forms::Form
 	{
 	public:
-		static List<MyMap<String^, Consumer>^>^ data;
+		static List<MyMap<String^, Consumer>^>^ data = gcnew List<MyMap<String^, Consumer>^>();
 		MainForm(void)
 		{
 			InitializeComponent();
@@ -71,6 +71,9 @@ namespace MapProject {
 			this->listBoxMaps->Name = L"listBoxMaps";
 			this->listBoxMaps->Size = System::Drawing::Size(143, 148);
 			this->listBoxMaps->TabIndex = 0;
+			/*this->listBoxMaps->DataSource = data;
+			this->listBoxMaps->DisplayMember = "name";
+			this->listBoxMaps->ValueMember = "arr";*/
 			// 
 			// NewDict
 			// 
@@ -98,7 +101,9 @@ namespace MapProject {
 	private: System::Void NewDict_Click(System::Object^  sender, System::EventArgs^  e) {
 		CreateForm^ form = gcnew CreateForm(data);
 		form->ShowDialog();
-		
+		listBoxMaps->Items->Clear();
+		for (int i = 0; i < data->Count; i++)
+			listBoxMaps->Items->Add(data[i]->name);
 	}
 	};
 }

@@ -18,7 +18,7 @@ namespace MapProject {
 	public ref class CreateForm : public System::Windows::Forms::Form
 	{
 	public:
-		static List<MyMap<String^, Consumer>^>^ data;
+		static List<MyMap<String^, Consumer>^>^ data = gcnew List<MyMap<String^, Consumer>^>();
 		CreateForm(List<MyMap<String^, Consumer>^>^ data)
 		{
 			InitializeComponent();
@@ -109,10 +109,6 @@ namespace MapProject {
 	private: System::Void Cancel_Click(System::Object^  sender, System::EventArgs^  e) {
 		this->Close();
 	}
-	private: System::Void OK_Click(System::Object^  sender, System::EventArgs^  e) {
-		MyMap<String^, Consumer>^ x;
-		x->name = textBoxName->Text;
-		data->Add(x);
-	}
+	private: System::Void OK_Click(System::Object^  sender, System::EventArgs^  e);
 	};
 }

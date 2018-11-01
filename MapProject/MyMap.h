@@ -1,5 +1,5 @@
 #pragma once
-template <typename KeyType, typename ValueType>
+template <class KeyType, class ValueType>
 ref class MyMap
 {
 	ref struct Node
@@ -7,10 +7,11 @@ ref class MyMap
 		KeyType key;
 		ValueType value;
 	};
+
 public:
-	MyMap();
 	System::String^ name;
-	array<System::String^>^ arr;
+	array<Node^>^ arr;
+	MyMap();
 
 	ValueType operator[] (KeyType key)
 	{
@@ -20,7 +21,8 @@ public:
 		throw System::IndexOutOfRangeException();
 	}
 
-	void insert(KeyType key, ValueType value);
+	bool insert(KeyType key, ValueType value);
 	void erase(KeyType key);
-	void change(KeyType key, ValueType value);
+	bool change(KeyType key, ValueType value);
+	void sort();
 };
