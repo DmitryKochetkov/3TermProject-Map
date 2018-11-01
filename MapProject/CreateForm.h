@@ -42,6 +42,7 @@ namespace MapProject {
 	protected:
 	private: System::Windows::Forms::Button^  OK;
 	private: System::Windows::Forms::Button^  Cancel;
+	private: System::Windows::Forms::Label^  label1;
 
 	private:
 		/// <summary>
@@ -59,20 +60,23 @@ namespace MapProject {
 			this->textBoxName = (gcnew System::Windows::Forms::TextBox());
 			this->OK = (gcnew System::Windows::Forms::Button());
 			this->Cancel = (gcnew System::Windows::Forms::Button());
+			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
 			// 
 			// textBoxName
 			// 
-			this->textBoxName->Location = System::Drawing::Point(106, 52);
+			this->textBoxName->Location = System::Drawing::Point(146, 38);
+			this->textBoxName->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->textBoxName->Name = L"textBoxName";
-			this->textBoxName->Size = System::Drawing::Size(217, 22);
+			this->textBoxName->Size = System::Drawing::Size(185, 20);
 			this->textBoxName->TabIndex = 0;
 			// 
 			// OK
 			// 
-			this->OK->Location = System::Drawing::Point(216, 113);
+			this->OK->Location = System::Drawing::Point(193, 86);
+			this->OK->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->OK->Name = L"OK";
-			this->OK->Size = System::Drawing::Size(89, 28);
+			this->OK->Size = System::Drawing::Size(67, 23);
 			this->OK->TabIndex = 1;
 			this->OK->Text = L"OK";
 			this->OK->UseVisualStyleBackColor = true;
@@ -81,26 +85,40 @@ namespace MapProject {
 			// Cancel
 			// 
 			this->Cancel->DialogResult = System::Windows::Forms::DialogResult::Cancel;
-			this->Cancel->Location = System::Drawing::Point(90, 113);
+			this->Cancel->Location = System::Drawing::Point(97, 86);
+			this->Cancel->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->Cancel->Name = L"Cancel";
-			this->Cancel->Size = System::Drawing::Size(89, 28);
+			this->Cancel->Size = System::Drawing::Size(67, 23);
 			this->Cancel->TabIndex = 2;
 			this->Cancel->Text = L"Отмена";
 			this->Cancel->UseVisualStyleBackColor = true;
 			this->Cancel->Click += gcnew System::EventHandler(this, &CreateForm::Cancel_Click);
 			// 
+			// label1
+			// 
+			this->label1->AutoSize = true;
+			this->label1->Location = System::Drawing::Point(30, 41);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(102, 13);
+			this->label1->TabIndex = 3;
+			this->label1->Text = L"Название словаря";
+			// 
 			// CreateForm
 			// 
 			this->AcceptButton = this->OK;
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->CancelButton = this->Cancel;
-			this->ClientSize = System::Drawing::Size(392, 169);
+			this->ClientSize = System::Drawing::Size(358, 126);
+			this->Controls->Add(this->label1);
 			this->Controls->Add(this->Cancel);
 			this->Controls->Add(this->OK);
 			this->Controls->Add(this->textBoxName);
+			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->MaximizeBox = false;
 			this->Name = L"CreateForm";
-			this->Text = L"Новый элемент";
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
+			this->Text = L"Новый словарь";
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -109,6 +127,17 @@ namespace MapProject {
 	private: System::Void Cancel_Click(System::Object^  sender, System::EventArgs^  e) {
 		this->Close();
 	}
-	private: System::Void OK_Click(System::Object^  sender, System::EventArgs^  e);
+	private: System::Void OK_Click(System::Object^  sender, System::EventArgs^  e)
+	{
+		MyMap<String^, Consumer>^ k = gcnew MyMap<String^, Consumer>;
+		if (textBoxName->Text == "")
+		{
+			MessageBox::Show("Введите название", "Ошибка!");
+			return;
+		}
+		k->name = textBoxName->Text;
+		data->Add(k);
+		this->Close();
+	}
 	};
 }

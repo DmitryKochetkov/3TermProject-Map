@@ -26,3 +26,9 @@ public:
 	bool change(KeyType key, ValueType value);
 	void sort();
 };
+
+template<class KeyType, class ValueType>
+inline MyMap<KeyType, ValueType>::MyMap()
+{
+	arr = gcnew array<Node^>(0);
+}

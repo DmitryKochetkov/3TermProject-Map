@@ -1,11 +1,5 @@
 #include "MyMap.h"
 
-template<typename KeyType, typename ValueType>
-inline MyMap<KeyType, ValueType>::MyMap()
-{
-	arr = gcnew array<Node>();
-}
-
 template<class KeyType, class ValueType>
 bool MyMap<KeyType, ValueType>::insert(KeyType key, ValueType value)
 {

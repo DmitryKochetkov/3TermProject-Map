@@ -41,6 +41,25 @@ namespace MapProject {
 		}
 	private: System::Windows::Forms::ListBox^  listBoxMaps;
 	private: System::Windows::Forms::Button^  NewDict;
+	private: System::Windows::Forms::Label^  label1;
+	private: System::Windows::Forms::Button^  SaveButton;
+
+	private: System::Windows::Forms::Button^  OpenButton;
+
+	private: System::Windows::Forms::Button^  DelDict;
+	private: System::Windows::Forms::ListBox^  listBoxElements;
+	private: System::Windows::Forms::Label^  label2;
+	private: System::Windows::Forms::Button^  AddButton;
+	private: System::Windows::Forms::Button^  EraseButton;
+	private: System::Windows::Forms::Button^  SearchButton;
+
+
+
+	private: System::Windows::Forms::Button^  ChangeButton;
+	private: System::Windows::Forms::Button^  SortButton;
+
+
+
 	protected:
 
 	protected:
@@ -61,40 +80,181 @@ namespace MapProject {
 		{
 			this->listBoxMaps = (gcnew System::Windows::Forms::ListBox());
 			this->NewDict = (gcnew System::Windows::Forms::Button());
+			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->SaveButton = (gcnew System::Windows::Forms::Button());
+			this->OpenButton = (gcnew System::Windows::Forms::Button());
+			this->DelDict = (gcnew System::Windows::Forms::Button());
+			this->listBoxElements = (gcnew System::Windows::Forms::ListBox());
+			this->label2 = (gcnew System::Windows::Forms::Label());
+			this->AddButton = (gcnew System::Windows::Forms::Button());
+			this->EraseButton = (gcnew System::Windows::Forms::Button());
+			this->SearchButton = (gcnew System::Windows::Forms::Button());
+			this->ChangeButton = (gcnew System::Windows::Forms::Button());
+			this->SortButton = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// listBoxMaps
 			// 
 			this->listBoxMaps->FormattingEnabled = true;
-			this->listBoxMaps->ItemHeight = 16;
-			this->listBoxMaps->Location = System::Drawing::Point(69, 39);
+			this->listBoxMaps->Location = System::Drawing::Point(30, 59);
+			this->listBoxMaps->Margin = System::Windows::Forms::Padding(2);
 			this->listBoxMaps->Name = L"listBoxMaps";
-			this->listBoxMaps->Size = System::Drawing::Size(143, 148);
+			this->listBoxMaps->Size = System::Drawing::Size(119, 134);
 			this->listBoxMaps->TabIndex = 0;
-			/*this->listBoxMaps->DataSource = data;
-			this->listBoxMaps->DisplayMember = "name";
-			this->listBoxMaps->ValueMember = "arr";*/
+			this->listBoxMaps->SelectedIndexChanged += gcnew System::EventHandler(this, &MainForm::listBoxMaps_SelectedIndexChanged);
 			// 
 			// NewDict
 			// 
-			this->NewDict->Location = System::Drawing::Point(69, 208);
+			this->NewDict->Location = System::Drawing::Point(30, 220);
+			this->NewDict->Margin = System::Windows::Forms::Padding(2);
 			this->NewDict->Name = L"NewDict";
-			this->NewDict->Size = System::Drawing::Size(143, 28);
+			this->NewDict->Size = System::Drawing::Size(119, 27);
 			this->NewDict->TabIndex = 1;
 			this->NewDict->Text = L"Новый словарь";
 			this->NewDict->UseVisualStyleBackColor = true;
 			this->NewDict->Click += gcnew System::EventHandler(this, &MainForm::NewDict_Click);
 			// 
+			// label1
+			// 
+			this->label1->AutoSize = true;
+			this->label1->Location = System::Drawing::Point(63, 28);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(50, 13);
+			this->label1->TabIndex = 2;
+			this->label1->Text = L"Словари";
+			// 
+			// SaveButton
+			// 
+			this->SaveButton->Enabled = false;
+			this->SaveButton->Location = System::Drawing::Point(159, 253);
+			this->SaveButton->Margin = System::Windows::Forms::Padding(2);
+			this->SaveButton->Name = L"SaveButton";
+			this->SaveButton->Size = System::Drawing::Size(137, 27);
+			this->SaveButton->TabIndex = 3;
+			this->SaveButton->Text = L"Сохранить словарь (.txt)";
+			this->SaveButton->UseVisualStyleBackColor = true;
+			// 
+			// OpenButton
+			// 
+			this->OpenButton->Location = System::Drawing::Point(159, 220);
+			this->OpenButton->Margin = System::Windows::Forms::Padding(2);
+			this->OpenButton->Name = L"OpenButton";
+			this->OpenButton->Size = System::Drawing::Size(137, 27);
+			this->OpenButton->TabIndex = 4;
+			this->OpenButton->Text = L"Открыть словарь (.txt)";
+			this->OpenButton->UseVisualStyleBackColor = true;
+			// 
+			// DelDict
+			// 
+			this->DelDict->Enabled = false;
+			this->DelDict->Location = System::Drawing::Point(30, 253);
+			this->DelDict->Margin = System::Windows::Forms::Padding(2);
+			this->DelDict->Name = L"DelDict";
+			this->DelDict->Size = System::Drawing::Size(119, 27);
+			this->DelDict->TabIndex = 5;
+			this->DelDict->Text = L"Удалить словарь";
+			this->DelDict->UseVisualStyleBackColor = true;
+			this->DelDict->Click += gcnew System::EventHandler(this, &MainForm::DelDict_Click);
+			// 
+			// listBoxElements
+			// 
+			this->listBoxElements->FormattingEnabled = true;
+			this->listBoxElements->Location = System::Drawing::Point(159, 59);
+			this->listBoxElements->Margin = System::Windows::Forms::Padding(2);
+			this->listBoxElements->Name = L"listBoxElements";
+			this->listBoxElements->Size = System::Drawing::Size(137, 134);
+			this->listBoxElements->TabIndex = 6;
+			// 
+			// label2
+			// 
+			this->label2->AutoSize = true;
+			this->label2->Location = System::Drawing::Point(196, 28);
+			this->label2->Name = L"label2";
+			this->label2->Size = System::Drawing::Size(59, 13);
+			this->label2->TabIndex = 7;
+			this->label2->Text = L"Элементы";
+			// 
+			// AddButton
+			// 
+			this->AddButton->Enabled = false;
+			this->AddButton->Location = System::Drawing::Point(328, 59);
+			this->AddButton->Margin = System::Windows::Forms::Padding(2);
+			this->AddButton->Name = L"AddButton";
+			this->AddButton->Size = System::Drawing::Size(156, 27);
+			this->AddButton->TabIndex = 8;
+			this->AddButton->Text = L"Добавить элемент";
+			this->AddButton->UseVisualStyleBackColor = true;
+			// 
+			// EraseButton
+			// 
+			this->EraseButton->Enabled = false;
+			this->EraseButton->Location = System::Drawing::Point(328, 94);
+			this->EraseButton->Margin = System::Windows::Forms::Padding(2);
+			this->EraseButton->Name = L"EraseButton";
+			this->EraseButton->Size = System::Drawing::Size(156, 27);
+			this->EraseButton->TabIndex = 9;
+			this->EraseButton->Text = L"Удалить элемент";
+			this->EraseButton->UseVisualStyleBackColor = true;
+			// 
+			// SearchButton
+			// 
+			this->SearchButton->Enabled = false;
+			this->SearchButton->Location = System::Drawing::Point(328, 166);
+			this->SearchButton->Margin = System::Windows::Forms::Padding(2);
+			this->SearchButton->Name = L"SearchButton";
+			this->SearchButton->Size = System::Drawing::Size(156, 27);
+			this->SearchButton->TabIndex = 10;
+			this->SearchButton->Text = L"Поиск по ключу";
+			this->SearchButton->UseVisualStyleBackColor = true;
+			// 
+			// ChangeButton
+			// 
+			this->ChangeButton->Enabled = false;
+			this->ChangeButton->Location = System::Drawing::Point(328, 130);
+			this->ChangeButton->Margin = System::Windows::Forms::Padding(2);
+			this->ChangeButton->Name = L"ChangeButton";
+			this->ChangeButton->Size = System::Drawing::Size(156, 27);
+			this->ChangeButton->TabIndex = 11;
+			this->ChangeButton->Text = L"Изменить элемент";
+			this->ChangeButton->UseVisualStyleBackColor = true;
+			// 
+			// SortButton
+			// 
+			this->SortButton->Enabled = false;
+			this->SortButton->Location = System::Drawing::Point(328, 233);
+			this->SortButton->Margin = System::Windows::Forms::Padding(2);
+			this->SortButton->Name = L"SortButton";
+			this->SortButton->Size = System::Drawing::Size(156, 27);
+			this->SortButton->TabIndex = 12;
+			this->SortButton->Text = L"Сортировать элементы";
+			this->SortButton->UseVisualStyleBackColor = true;
+			// 
 			// MainForm
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(555, 296);
+			this->ClientSize = System::Drawing::Size(510, 315);
+			this->Controls->Add(this->SortButton);
+			this->Controls->Add(this->ChangeButton);
+			this->Controls->Add(this->SearchButton);
+			this->Controls->Add(this->EraseButton);
+			this->Controls->Add(this->AddButton);
+			this->Controls->Add(this->label2);
+			this->Controls->Add(this->listBoxElements);
+			this->Controls->Add(this->DelDict);
+			this->Controls->Add(this->OpenButton);
+			this->Controls->Add(this->SaveButton);
+			this->Controls->Add(this->label1);
 			this->Controls->Add(this->NewDict);
 			this->Controls->Add(this->listBoxMaps);
+			this->Margin = System::Windows::Forms::Padding(2);
+			this->MaximizeBox = false;
 			this->Name = L"MainForm";
-			this->Text = L"MainForm";
+			this->ShowIcon = false;
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
+			this->Text = L"Стркутура данных \"Словарь\"";
 			this->ResumeLayout(false);
+			this->PerformLayout();
 
 		}
 #pragma endregion
@@ -105,5 +265,24 @@ namespace MapProject {
 		for (int i = 0; i < data->Count; i++)
 			listBoxMaps->Items->Add(data[i]->name);
 	}
-	};
+	private: System::Void DelDict_Click(System::Object^  sender, System::EventArgs^  e) {
+		data->RemoveAt(listBoxMaps->SelectedIndex);
+		listBoxMaps->Items->Clear();
+		for (int i = 0; i < data->Count; i++)
+			listBoxMaps->Items->Add(data[i]->name);
+	}
+private: System::Void listBoxMaps_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e) {
+	bool a = (listBoxMaps->SelectedIndex != -1);
+	DelDict->Enabled = a;
+	SaveButton->Enabled = a;
+	AddButton->Enabled = a;
+	SortButton->Enabled = a;
+	if (a)
+	{
+		listBoxElements->Items->Clear();
+		for (int i = 0; i < data[listBoxMaps->SelectedIndex]->arr->Length; i++)
+			listBoxElements->Items->Add(data[listBoxMaps->SelectedIndex]->arr[i]->key);
+	}
+}
+};
 }
