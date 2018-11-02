@@ -57,6 +57,11 @@ namespace MapProject {
 
 	private: System::Windows::Forms::Button^  ChangeButton;
 	private: System::Windows::Forms::Button^  SortButton;
+	private: System::Windows::Forms::SaveFileDialog^  saveFileDialog1;
+	private: System::Windows::Forms::OpenFileDialog^  openFileDialog1;
+	private: System::Windows::Forms::Button^  GetElement;
+
+
 
 
 
@@ -91,6 +96,9 @@ namespace MapProject {
 			this->SearchButton = (gcnew System::Windows::Forms::Button());
 			this->ChangeButton = (gcnew System::Windows::Forms::Button());
 			this->SortButton = (gcnew System::Windows::Forms::Button());
+			this->saveFileDialog1 = (gcnew System::Windows::Forms::SaveFileDialog());
+			this->openFileDialog1 = (gcnew System::Windows::Forms::OpenFileDialog());
+			this->GetElement = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// listBoxMaps
@@ -133,6 +141,7 @@ namespace MapProject {
 			this->SaveButton->TabIndex = 3;
 			this->SaveButton->Text = L"Сохранить словарь (.txt)";
 			this->SaveButton->UseVisualStyleBackColor = true;
+			this->SaveButton->Click += gcnew System::EventHandler(this, &MainForm::SaveButton_Click);
 			// 
 			// OpenButton
 			// 
@@ -143,6 +152,7 @@ namespace MapProject {
 			this->OpenButton->TabIndex = 4;
 			this->OpenButton->Text = L"Открыть словарь (.txt)";
 			this->OpenButton->UseVisualStyleBackColor = true;
+			this->OpenButton->Click += gcnew System::EventHandler(this, &MainForm::OpenButton_Click);
 			// 
 			// DelDict
 			// 
@@ -164,6 +174,7 @@ namespace MapProject {
 			this->listBoxElements->Name = L"listBoxElements";
 			this->listBoxElements->Size = System::Drawing::Size(137, 134);
 			this->listBoxElements->TabIndex = 6;
+			this->listBoxElements->SelectedIndexChanged += gcnew System::EventHandler(this, &MainForm::listBoxElements_SelectedIndexChanged);
 			// 
 			// label2
 			// 
@@ -177,7 +188,7 @@ namespace MapProject {
 			// AddButton
 			// 
 			this->AddButton->Enabled = false;
-			this->AddButton->Location = System::Drawing::Point(328, 59);
+			this->AddButton->Location = System::Drawing::Point(328, 95);
 			this->AddButton->Margin = System::Windows::Forms::Padding(2);
 			this->AddButton->Name = L"AddButton";
 			this->AddButton->Size = System::Drawing::Size(156, 27);
@@ -188,7 +199,7 @@ namespace MapProject {
 			// EraseButton
 			// 
 			this->EraseButton->Enabled = false;
-			this->EraseButton->Location = System::Drawing::Point(328, 94);
+			this->EraseButton->Location = System::Drawing::Point(328, 130);
 			this->EraseButton->Margin = System::Windows::Forms::Padding(2);
 			this->EraseButton->Name = L"EraseButton";
 			this->EraseButton->Size = System::Drawing::Size(156, 27);
@@ -199,7 +210,7 @@ namespace MapProject {
 			// SearchButton
 			// 
 			this->SearchButton->Enabled = false;
-			this->SearchButton->Location = System::Drawing::Point(328, 166);
+			this->SearchButton->Location = System::Drawing::Point(328, 220);
 			this->SearchButton->Margin = System::Windows::Forms::Padding(2);
 			this->SearchButton->Name = L"SearchButton";
 			this->SearchButton->Size = System::Drawing::Size(156, 27);
@@ -210,7 +221,7 @@ namespace MapProject {
 			// ChangeButton
 			// 
 			this->ChangeButton->Enabled = false;
-			this->ChangeButton->Location = System::Drawing::Point(328, 130);
+			this->ChangeButton->Location = System::Drawing::Point(328, 166);
 			this->ChangeButton->Margin = System::Windows::Forms::Padding(2);
 			this->ChangeButton->Name = L"ChangeButton";
 			this->ChangeButton->Size = System::Drawing::Size(156, 27);
@@ -221,7 +232,7 @@ namespace MapProject {
 			// SortButton
 			// 
 			this->SortButton->Enabled = false;
-			this->SortButton->Location = System::Drawing::Point(328, 233);
+			this->SortButton->Location = System::Drawing::Point(328, 253);
 			this->SortButton->Margin = System::Windows::Forms::Padding(2);
 			this->SortButton->Name = L"SortButton";
 			this->SortButton->Size = System::Drawing::Size(156, 27);
@@ -229,11 +240,35 @@ namespace MapProject {
 			this->SortButton->Text = L"Сортировать элементы";
 			this->SortButton->UseVisualStyleBackColor = true;
 			// 
+			// saveFileDialog1
+			// 
+			this->saveFileDialog1->DefaultExt = L"txt";
+			this->saveFileDialog1->Filter = L"Текстовые файлы (*.txt)|*.txt";
+			// 
+			// openFileDialog1
+			// 
+			this->openFileDialog1->DefaultExt = L"txt";
+			this->openFileDialog1->FileName = L"openFileDialog1";
+			this->openFileDialog1->Filter = L"Текстовые файлы (*.txt)|*.txt";
+			// 
+			// GetElement
+			// 
+			this->GetElement->Enabled = false;
+			this->GetElement->Location = System::Drawing::Point(328, 59);
+			this->GetElement->Margin = System::Windows::Forms::Padding(2);
+			this->GetElement->Name = L"GetElement";
+			this->GetElement->Size = System::Drawing::Size(156, 27);
+			this->GetElement->TabIndex = 13;
+			this->GetElement->Text = L"Просмотреть элемент";
+			this->GetElement->UseVisualStyleBackColor = true;
+			this->GetElement->Click += gcnew System::EventHandler(this, &MainForm::GetElement_Click);
+			// 
 			// MainForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(510, 315);
+			this->Controls->Add(this->GetElement);
 			this->Controls->Add(this->SortButton);
 			this->Controls->Add(this->ChangeButton);
 			this->Controls->Add(this->SearchButton);
@@ -277,12 +312,32 @@ private: System::Void listBoxMaps_SelectedIndexChanged(System::Object^  sender, 
 	SaveButton->Enabled = a;
 	AddButton->Enabled = a;
 	SortButton->Enabled = a;
+	SearchButton->Enabled = a;
 	if (a)
 	{
 		listBoxElements->Items->Clear();
 		for (int i = 0; i < data[listBoxMaps->SelectedIndex]->arr->Length; i++)
 			listBoxElements->Items->Add(data[listBoxMaps->SelectedIndex]->arr[i]->key);
+			//data[listBoxMaps->SelectedIndex]->arr[0];
 	}
+}
+private: System::Void listBoxElements_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e) {
+	bool a = (listBoxElements->SelectedIndex != -1);
+	GetElement->Enabled = a;
+	EraseButton->Enabled = a;
+	ChangeButton->Enabled = a;
+}
+private: System::Void OpenButton_Click(System::Object^  sender, System::EventArgs^  e) {
+	openFileDialog1->ShowDialog();
+}
+private: System::Void SaveButton_Click(System::Object^  sender, System::EventArgs^  e) {
+	saveFileDialog1->ShowDialog();
+}
+private: System::Void GetElement_Click(System::Object^  sender, System::EventArgs^  e) {
+	MessageBox::Show(
+		"Абонент:", "Просмотр данных абонента",
+		MessageBoxButtons::OK
+	);
 }
 };
 }

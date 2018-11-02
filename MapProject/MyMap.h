@@ -9,6 +9,7 @@ ref class MyMap
 	};
 
 public:
+	
 	System::String^ name;
 	array<Node^>^ arr;
 	MyMap();
