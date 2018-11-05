@@ -1,17 +1,17 @@
 #pragma once
+template <class T1, class T2>
+ref struct Node
+{
+	T1 key;
+	T2 value;
+};
+
 template <class Key_Type, class Value_Type>
 ref class MyMap
 {
-	ref struct Node
-	{
-		Key_Type key;
-		Value_Type value;
-	};
-
 public:
-	
 	System::String^ name;
-	array<Node^>^ arr;
+	array<Node<Key_Type, Value_Type>^>^ arr;
 	MyMap();
 
 	Value_Type operator[] (Key_Type key)
@@ -31,5 +31,5 @@ public:
 template<class Key_Type, class Value_Type>
 inline MyMap<Key_Type, Value_Type>::MyMap()
 {
-	arr = gcnew array<Node^>(0);
+	arr = gcnew array<Node<Key_Type, Value_Type>^>(0);
 }

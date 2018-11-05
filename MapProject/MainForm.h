@@ -318,7 +318,6 @@ private: System::Void listBoxMaps_SelectedIndexChanged(System::Object^  sender, 
 		listBoxElements->Items->Clear();
 		for (int i = 0; i < data[listBoxMaps->SelectedIndex]->arr->Length; i++)
 			listBoxElements->Items->Add(data[listBoxMaps->SelectedIndex]->arr[i]->key);
-			//data[listBoxMaps->SelectedIndex]->arr[0];
 	}
 }
 private: System::Void listBoxElements_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e) {
