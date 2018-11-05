@@ -2,6 +2,7 @@
 #include "Consumer.h"
 #include "MyMap.h"
 #include "CreateForm.h"
+#include "ConsumerForm.h"
 
 namespace MapProject {
 
@@ -195,6 +196,7 @@ namespace MapProject {
 			this->AddButton->TabIndex = 8;
 			this->AddButton->Text = L"Добавить элемент";
 			this->AddButton->UseVisualStyleBackColor = true;
+			this->AddButton->Click += gcnew System::EventHandler(this, &MainForm::AddButton_Click);
 			// 
 			// EraseButton
 			// 
@@ -337,6 +339,10 @@ private: System::Void GetElement_Click(System::Object^  sender, System::EventArg
 		"Абонент:", "Просмотр данных абонента",
 		MessageBoxButtons::OK
 	);
+}
+private: System::Void AddButton_Click(System::Object^  sender, System::EventArgs^  e) {
+	ConsumerForm^ form = gcnew ConsumerForm(data[listBoxMaps->SelectedIndex]);
+	form->ShowDialog();
 }
 };
 }
