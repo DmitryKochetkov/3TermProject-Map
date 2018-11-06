@@ -62,3 +62,18 @@ bool MyMap<Key_Type, Value_Type>::insert(Key_Type key, Value_Type value)
 	arr[arr->Length - 1] = %x;
 	return true;
 }
+
+template<class Key_Type, class Value_Type>
+void MyMap<Key_Type, Value_Type>::erase(Key_Type key)
+{
+	int k;
+	for (int i = 0; i < arr.Length; i++)
+		if (arr[i]->key == key)
+		{
+			k = i;
+			break;
+		}
+	for (int i = k; i < arr->Length - 1; i++)
+		arr[i] = arr[i + 1];
+	arr->Resize(arr, arr->Length - 1);
+}
