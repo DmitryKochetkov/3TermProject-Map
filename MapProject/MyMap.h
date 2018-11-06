@@ -6,6 +6,8 @@ ref struct Node
 	T2 value;
 };
 
+using namespace System;
+
 template <class Key_Type, class Value_Type>
 ref class MyMap
 {
@@ -17,9 +19,17 @@ public:
 	Value_Type operator[] (Key_Type key)
 	{
 		for (int i = 0; i < arr.Length; i++)
-			if (arr[i].key == key)
-				return arr[i].value;
-		throw System::IndexOutOfRangeException();
+		{
+			try
+			{
+				if (arr[i]->key == key)
+					return arr[i]->value;
+			}
+			catch (const System::IndexOutOfRangeException())
+			{
+				return Value_Type();
+			}
+		}
 	}
 
 	bool insert(Key_Type key, Value_Type value);
@@ -48,6 +58,7 @@ bool MyMap<Key_Type, Value_Type>::insert(Key_Type key, Value_Type value)
 	{
 		return false;
 	}
-	arr->Add(x);
+	arr->Resize(arr, arr->Length + 1);
+	arr[arr->Length - 1] = %x;
 	return true;
 }
