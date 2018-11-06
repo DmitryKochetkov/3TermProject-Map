@@ -311,6 +311,8 @@ namespace MapProject {
 		listBoxMaps->Items->Clear();
 		for (int i = 0; i < data->Count; i++)
 			listBoxMaps->Items->Add(data[i]->name);
+		//listBoxMaps->SelectedIndex = -1;
+		listBoxMaps_SelectedIndexChanged(sender, e);
 	}
 private: System::Void listBoxMaps_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e) {
 	bool a = (listBoxMaps->SelectedIndex != -1);
@@ -319,9 +321,9 @@ private: System::Void listBoxMaps_SelectedIndexChanged(System::Object^  sender, 
 	AddButton->Enabled = a;
 	SortButton->Enabled = a;
 	SearchButton->Enabled = a;
+	listBoxElements->Items->Clear();
 	if (a)
 	{
-		listBoxElements->Items->Clear();
 		for (int i = 0; i < data[listBoxMaps->SelectedIndex]->arr->Length; i++)
 			listBoxElements->Items->Add("+7 " + data[listBoxMaps->SelectedIndex]->arr[i]->key);
 	}
