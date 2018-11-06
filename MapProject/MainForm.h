@@ -343,6 +343,7 @@ private: System::Void GetElement_Click(System::Object^  sender, System::EventArg
 private: System::Void AddButton_Click(System::Object^  sender, System::EventArgs^  e) {
 	ConsumerForm^ form = gcnew ConsumerForm(data[listBoxMaps->SelectedIndex]);
 	form->ShowDialog();
+	
 }
 };
 }

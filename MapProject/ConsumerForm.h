@@ -257,6 +257,7 @@ namespace MapProject {
 			this->AcceptButton = this->OKButton;
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->CancelButton = this->CancelButton;
 			this->ClientSize = System::Drawing::Size(304, 392);
 			this->Controls->Add(this->textBoxTelephone);
 			this->Controls->Add(this->groupBoxPassport);
@@ -283,7 +284,14 @@ namespace MapProject {
 	}
 
 	private: System::Void OKButton_Click(System::Object^  sender, System::EventArgs^  e) {
-		
+		Consumer x;
+		x.surname = textBoxSurname->Text;
+		x.name = textBoxName->Text;
+		x.fathername = textBoxFathername->Text;
+		x.series = textBoxSurname->Text;
+		x.number = textBoxSurname->Text;
+		x.tel = textBoxTelephone->Text;
+		map->insert(x.tel, x);
 		this->Close();
 	}
 };

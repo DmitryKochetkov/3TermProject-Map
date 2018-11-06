@@ -33,3 +33,21 @@ inline MyMap<Key_Type, Value_Type>::MyMap()
 {
 	arr = gcnew array<Node<Key_Type, Value_Type>^>(0);
 }
+
+template<class Key_Type, class Value_Type>
+bool MyMap<Key_Type, Value_Type>::insert(Key_Type key, Value_Type value)
+{
+	Node<Key_Type, Value_Type> x;
+	x.key = key;
+	x.value = value;
+	try
+	{
+		this[key];
+	}
+	catch (System::IndexOutOfRangeException())
+	{
+		return false;
+	}
+	arr->Add(x);
+	return true;
+}

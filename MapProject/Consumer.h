@@ -10,7 +10,10 @@ public:
 	String^ series;
 	String^ number;
 	String^ tel;
-
+	
 	Consumer();
+	Consumer(const Consumer %o);
+	Consumer% operator = (Consumer% o);
 };
+
 
