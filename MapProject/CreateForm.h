@@ -133,7 +133,7 @@ namespace MapProject {
 			if (data[i]->name == textBoxName->Text)
 			{
 				MessageBox::Show("Данное имя уже используется!", "Ошибка!");
-				textBoxName->Text = textBoxName->Text + " 1";
+				textBoxName->Text = "Словарь " + i.ToString();
 				return;
 			}
 		MyMap<String^, Consumer>^ k = gcnew MyMap<String^, Consumer>;
