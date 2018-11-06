@@ -109,81 +109,91 @@ namespace MapProject {
 			this->groupBoxFIO->Controls->Add(this->label2);
 			this->groupBoxFIO->Controls->Add(this->textBoxSurname);
 			this->groupBoxFIO->Controls->Add(this->label1);
-			this->groupBoxFIO->Location = System::Drawing::Point(22, 18);
+			this->groupBoxFIO->Location = System::Drawing::Point(29, 22);
+			this->groupBoxFIO->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->groupBoxFIO->Name = L"groupBoxFIO";
-			this->groupBoxFIO->Size = System::Drawing::Size(260, 128);
+			this->groupBoxFIO->Padding = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->groupBoxFIO->Size = System::Drawing::Size(347, 158);
 			this->groupBoxFIO->TabIndex = 0;
 			this->groupBoxFIO->TabStop = false;
 			this->groupBoxFIO->Text = L"ФИО";
 			// 
 			// textBoxFathername
 			// 
-			this->textBoxFathername->Location = System::Drawing::Point(90, 90);
+			this->textBoxFathername->Location = System::Drawing::Point(120, 111);
+			this->textBoxFathername->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->textBoxFathername->MaxLength = 20;
 			this->textBoxFathername->Name = L"textBoxFathername";
-			this->textBoxFathername->Size = System::Drawing::Size(144, 20);
-			this->textBoxFathername->TabIndex = 6;
+			this->textBoxFathername->Size = System::Drawing::Size(191, 22);
+			this->textBoxFathername->TabIndex = 3;
 			// 
 			// textBoxName
 			// 
-			this->textBoxName->Location = System::Drawing::Point(90, 58);
+			this->textBoxName->Location = System::Drawing::Point(120, 71);
+			this->textBoxName->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->textBoxName->MaxLength = 15;
 			this->textBoxName->Name = L"textBoxName";
-			this->textBoxName->Size = System::Drawing::Size(144, 20);
-			this->textBoxName->TabIndex = 5;
+			this->textBoxName->Size = System::Drawing::Size(191, 22);
+			this->textBoxName->TabIndex = 2;
 			// 
 			// label3
 			// 
 			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(20, 93);
+			this->label3->Location = System::Drawing::Point(27, 114);
+			this->label3->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(54, 13);
+			this->label3->Size = System::Drawing::Size(71, 17);
 			this->label3->TabIndex = 4;
 			this->label3->Text = L"Отчество";
 			// 
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(20, 61);
+			this->label2->Location = System::Drawing::Point(27, 75);
+			this->label2->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(29, 13);
+			this->label2->Size = System::Drawing::Size(35, 17);
 			this->label2->TabIndex = 3;
 			this->label2->Text = L"Имя";
 			// 
 			// textBoxSurname
 			// 
-			this->textBoxSurname->Location = System::Drawing::Point(90, 26);
+			this->textBoxSurname->Location = System::Drawing::Point(120, 32);
+			this->textBoxSurname->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->textBoxSurname->MaxLength = 20;
 			this->textBoxSurname->Name = L"textBoxSurname";
-			this->textBoxSurname->Size = System::Drawing::Size(144, 20);
-			this->textBoxSurname->TabIndex = 2;
+			this->textBoxSurname->Size = System::Drawing::Size(191, 22);
+			this->textBoxSurname->TabIndex = 1;
 			// 
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(20, 29);
+			this->label1->Location = System::Drawing::Point(27, 36);
+			this->label1->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(56, 13);
+			this->label1->Size = System::Drawing::Size(70, 17);
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"Фамилия";
 			// 
 			// CancelButton
 			// 
 			this->CancelButton->DialogResult = System::Windows::Forms::DialogResult::Cancel;
-			this->CancelButton->Location = System::Drawing::Point(45, 344);
+			this->CancelButton->Location = System::Drawing::Point(60, 423);
+			this->CancelButton->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->CancelButton->Name = L"CancelButton";
-			this->CancelButton->Size = System::Drawing::Size(92, 25);
-			this->CancelButton->TabIndex = 1;
+			this->CancelButton->Size = System::Drawing::Size(123, 31);
+			this->CancelButton->TabIndex = 100;
 			this->CancelButton->Text = L"Отмена";
 			this->CancelButton->UseVisualStyleBackColor = true;
 			this->CancelButton->Click += gcnew System::EventHandler(this, &ConsumerForm::CancelButton_Click);
 			// 
 			// OKButton
 			// 
-			this->OKButton->Location = System::Drawing::Point(164, 344);
+			this->OKButton->Location = System::Drawing::Point(219, 423);
+			this->OKButton->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->OKButton->Name = L"OKButton";
-			this->OKButton->Size = System::Drawing::Size(92, 25);
-			this->OKButton->TabIndex = 2;
+			this->OKButton->Size = System::Drawing::Size(123, 31);
+			this->OKButton->TabIndex = 8;
 			this->OKButton->Text = L"ОК";
 			this->OKButton->UseVisualStyleBackColor = true;
 			this->OKButton->Click += gcnew System::EventHandler(this, &ConsumerForm::OKButton_Click);
@@ -194,77 +204,85 @@ namespace MapProject {
 			this->groupBoxPassport->Controls->Add(this->textBoxNumber);
 			this->groupBoxPassport->Controls->Add(this->label5);
 			this->groupBoxPassport->Controls->Add(this->textBoxSeries);
-			this->groupBoxPassport->Location = System::Drawing::Point(22, 161);
+			this->groupBoxPassport->Location = System::Drawing::Point(29, 198);
+			this->groupBoxPassport->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->groupBoxPassport->Name = L"groupBoxPassport";
-			this->groupBoxPassport->Size = System::Drawing::Size(260, 102);
-			this->groupBoxPassport->TabIndex = 7;
+			this->groupBoxPassport->Padding = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->groupBoxPassport->Size = System::Drawing::Size(347, 126);
+			this->groupBoxPassport->TabIndex = 4;
 			this->groupBoxPassport->TabStop = false;
 			this->groupBoxPassport->Text = L"Паспортные данные";
 			// 
 			// label4
 			// 
 			this->label4->AutoSize = true;
-			this->label4->Location = System::Drawing::Point(20, 29);
+			this->label4->Location = System::Drawing::Point(27, 36);
+			this->label4->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(38, 13);
+			this->label4->Size = System::Drawing::Size(49, 17);
 			this->label4->TabIndex = 6;
 			this->label4->Text = L"Серия";
 			// 
 			// textBoxNumber
 			// 
-			this->textBoxNumber->Location = System::Drawing::Point(90, 58);
+			this->textBoxNumber->Location = System::Drawing::Point(120, 71);
+			this->textBoxNumber->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->textBoxNumber->MaxLength = 6;
 			this->textBoxNumber->Name = L"textBoxNumber";
-			this->textBoxNumber->Size = System::Drawing::Size(144, 20);
-			this->textBoxNumber->TabIndex = 5;
+			this->textBoxNumber->Size = System::Drawing::Size(191, 22);
+			this->textBoxNumber->TabIndex = 6;
 			// 
 			// label5
 			// 
 			this->label5->AutoSize = true;
-			this->label5->Location = System::Drawing::Point(20, 61);
+			this->label5->Location = System::Drawing::Point(27, 75);
+			this->label5->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(41, 13);
+			this->label5->Size = System::Drawing::Size(51, 17);
 			this->label5->TabIndex = 3;
 			this->label5->Text = L"Номер";
 			// 
 			// textBoxSeries
 			// 
-			this->textBoxSeries->Location = System::Drawing::Point(90, 26);
+			this->textBoxSeries->Location = System::Drawing::Point(120, 32);
+			this->textBoxSeries->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->textBoxSeries->MaxLength = 4;
 			this->textBoxSeries->Name = L"textBoxSeries";
-			this->textBoxSeries->Size = System::Drawing::Size(144, 20);
-			this->textBoxSeries->TabIndex = 2;
+			this->textBoxSeries->Size = System::Drawing::Size(191, 22);
+			this->textBoxSeries->TabIndex = 5;
 			// 
 			// label6
 			// 
 			this->label6->AutoSize = true;
-			this->label6->Location = System::Drawing::Point(45, 295);
+			this->label6->Location = System::Drawing::Point(60, 363);
+			this->label6->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(70, 13);
+			this->label6->Size = System::Drawing::Size(92, 17);
 			this->label6->TabIndex = 0;
 			this->label6->Text = L"Телефон: +7";
 			// 
 			// textBoxTelephone
 			// 
-			this->textBoxTelephone->Location = System::Drawing::Point(122, 292);
+			this->textBoxTelephone->Location = System::Drawing::Point(163, 359);
+			this->textBoxTelephone->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->textBoxTelephone->MaxLength = 10;
 			this->textBoxTelephone->Name = L"textBoxTelephone";
-			this->textBoxTelephone->Size = System::Drawing::Size(144, 20);
-			this->textBoxTelephone->TabIndex = 6;
+			this->textBoxTelephone->Size = System::Drawing::Size(191, 22);
+			this->textBoxTelephone->TabIndex = 7;
 			// 
 			// ConsumerForm
 			// 
 			this->AcceptButton = this->OKButton;
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->CancelButton = this->CancelButton;
-			this->ClientSize = System::Drawing::Size(304, 392);
+			this->ClientSize = System::Drawing::Size(405, 482);
 			this->Controls->Add(this->textBoxTelephone);
 			this->Controls->Add(this->groupBoxPassport);
 			this->Controls->Add(this->label6);
 			this->Controls->Add(this->OKButton);
 			this->Controls->Add(this->CancelButton);
 			this->Controls->Add(this->groupBoxFIO);
+			this->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->MaximizeBox = false;
 			this->Name = L"ConsumerForm";
 			this->ShowIcon = false;
