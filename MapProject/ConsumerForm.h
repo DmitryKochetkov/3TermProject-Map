@@ -306,8 +306,8 @@ namespace MapProject {
 		x.surname = textBoxSurname->Text;
 		x.name = textBoxName->Text;
 		x.fathername = textBoxFathername->Text;
-		x.series = textBoxSurname->Text;
-		x.number = textBoxSurname->Text;
+		x.series = textBoxSeries->Text;
+		x.number = textBoxNumber->Text;
 		x.tel = textBoxTelephone->Text;
 		map->insert(x.tel, x);
 		this->Close();

@@ -323,7 +323,7 @@ private: System::Void listBoxMaps_SelectedIndexChanged(System::Object^  sender, 
 	{
 		listBoxElements->Items->Clear();
 		for (int i = 0; i < data[listBoxMaps->SelectedIndex]->arr->Length; i++)
-			listBoxElements->Items->Add(data[listBoxMaps->SelectedIndex]->arr[i]->key);
+			listBoxElements->Items->Add("+7 " + data[listBoxMaps->SelectedIndex]->arr[i]->key);
 	}
 }
 private: System::Void listBoxElements_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e) {
@@ -339,8 +339,9 @@ private: System::Void SaveButton_Click(System::Object^  sender, System::EventArg
 	saveFileDialog1->ShowDialog();
 }
 private: System::Void GetElement_Click(System::Object^  sender, System::EventArgs^  e) {
+	Consumer x = data[listBoxMaps->SelectedIndex]->arr[listBoxElements->SelectedIndex]->value;
 	MessageBox::Show(
-		"Абонент:", "Просмотр данных абонента",
+		"Абонент: " + x.surname + " " + x.name + " " + x.fathername + "\nПаспортные данные: \n\tСерия: " + x.series + "\n\tНомер: " + x.number + "\nТелефон: +7 " + x.tel, "Просмотр данных абонента",
 		MessageBoxButtons::OK
 	);
 }
