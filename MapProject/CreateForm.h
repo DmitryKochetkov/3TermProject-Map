@@ -129,6 +129,13 @@ namespace MapProject {
 	}
 	private: System::Void OK_Click(System::Object^  sender, System::EventArgs^  e)
 	{
+		for (int i = 0; i < data->Count; i++)
+			if (data[i]->name == textBoxName->Text)
+			{
+				MessageBox::Show("Данное имя уже используется!", "Ошибка!");
+				textBoxName->Text = textBoxName->Text + " 1";
+				return;
+			}
 		MyMap<String^, Consumer>^ k = gcnew MyMap<String^, Consumer>;
 		if (textBoxName->Text == "")
 		{
