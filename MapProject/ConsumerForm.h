@@ -19,10 +19,25 @@ namespace MapProject {
 	{
 	public:
 		static MyMap<String^, Consumer>^ map = gcnew MyMap<String^, Consumer>();
+		static String^ key = nullptr;
 		ConsumerForm(MyMap<String^, Consumer>^ map)
 		{
 			InitializeComponent();
 			this->map = map;
+		}
+
+		ConsumerForm(MyMap<String^, Consumer>^ map, String^ key)
+		{
+			InitializeComponent();
+			this->map = map;
+			this->key = key;
+			textBoxSurname->Text = map[key]->surname; 
+			textBoxName->Text = map[key]->name;
+			textBoxFathername->Text = map[key]->fathername;
+			textBoxSeries->Text = map[key]->series;
+			textBoxNumber->Text = map[key]->number;
+			textBoxTelephone->Text = map[key]->tel;
+			textBoxTelephone->Enabled = false;
 		}
 
 	protected:
@@ -302,14 +317,20 @@ namespace MapProject {
 	}
 
 	private: System::Void OKButton_Click(System::Object^  sender, System::EventArgs^  e) {
-		Consumer x;
-		x.surname = textBoxSurname->Text;
-		x.name = textBoxName->Text;
-		x.fathername = textBoxFathername->Text;
-		x.series = textBoxSeries->Text;
-		x.number = textBoxNumber->Text;
-		x.tel = textBoxTelephone->Text;
-		map->insert(x.tel, x);
+		Consumer^ x = gcnew Consumer();
+		x->surname = textBoxSurname->Text;
+		x->name = textBoxName->Text;
+		x->fathername = textBoxFathername->Text;
+		x->series = textBoxSeries->Text;
+		x->number = textBoxNumber->Text;
+		x->tel = textBoxTelephone->Text;
+		if (key == nullptr)
+		map->insert(x->tel, *x);
+		else
+		{
+			//map[key] = *x; E0137, C2440
+			map->change(key, *x);
+		}
 		this->Close();
 	}
 };
