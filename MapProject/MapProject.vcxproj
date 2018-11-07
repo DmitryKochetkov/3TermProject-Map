@@ -140,6 +140,7 @@
     <ClCompile Include="CreateForm.cpp" />
     <ClCompile Include="MainForm.cpp" />
     <ClCompile Include="MyMap.cpp" />
+    <ClCompile Include="SearchForm.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Consumer.h" />
@@ -153,6 +154,9 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="MyMap.h" />
+    <ClInclude Include="SearchForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="ConsumerForm.resx">
@@ -163,6 +167,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SearchForm.resx">
+      <DependentUpon>SearchForm.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

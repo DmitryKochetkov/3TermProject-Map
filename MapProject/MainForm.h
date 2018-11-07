@@ -3,6 +3,7 @@
 #include "MyMap.h"
 #include "CreateForm.h"
 #include "ConsumerForm.h"
+#include "SearchForm.h"
 
 namespace MapProject {
 
@@ -224,6 +225,7 @@ namespace MapProject {
 			this->SearchButton->TabIndex = 9;
 			this->SearchButton->Text = L"Поиск по ключу";
 			this->SearchButton->UseVisualStyleBackColor = true;
+			this->SearchButton->Click += gcnew System::EventHandler(this, &MainForm::SearchButton_Click);
 			// 
 			// ChangeButton
 			// 
@@ -363,6 +365,10 @@ private: System::Void ChangeButton_Click(System::Object^  sender, System::EventA
 	form->ShowDialog();
 	listBoxMaps_SelectedIndexChanged(sender, e);
 	listBoxElements_SelectedIndexChanged(sender, e);
+}
+private: System::Void SearchButton_Click(System::Object^  sender, System::EventArgs^  e) {
+	SearchForm^ form = gcnew SearchForm(data[listBoxMaps->SelectedIndex]);
+	form->ShowDialog();
 }
 };
 }
