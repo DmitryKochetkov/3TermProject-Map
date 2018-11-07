@@ -65,14 +65,8 @@ bool MyMap<Key_Type, Value_Type>::insert(Key_Type key, Value_Type value)
 	Node<Key_Type, Value_Type> x;
 	x.key = key;
 	x.value = value;
-	try
-	{
-		this[key];
-	}
-	catch (System::IndexOutOfRangeException())
-	{
+	if (this[key] != nullptr)
 		return false;
-	}
 	arr->Resize(arr, arr->Length + 1);
 	arr[arr->Length - 1] = %x;
 	return true;

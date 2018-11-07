@@ -325,7 +325,8 @@ namespace MapProject {
 		x->number = textBoxNumber->Text;
 		x->tel = textBoxTelephone->Text;
 		if (key == nullptr)
-		map->insert(x->tel, *x);
+			if (!map->insert(x->tel, *x))
+				MessageBox::Show("Элемент с данным ключом уже инициализирован.", "Ошибка");
 		else
 		{
 			//map[key] = *x; E0137, C2440
