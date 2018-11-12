@@ -345,17 +345,17 @@ private: System::Void OpenButton_Click(System::Object^  sender, System::EventArg
 	while ((buf = sr->ReadLine()) != nullptr)
 	{
 		cons_buf->surname = buf->Substring(0, buf->IndexOf(" "));
-		buf->Remove(0, buf->IndexOf(" "));
+		buf = buf->Remove(0, buf->IndexOf(" ") + 1);
 		cons_buf->name = buf->Substring(0, buf->IndexOf(" "));
-		buf->Remove(0, buf->IndexOf(" "));
+		buf = buf->Remove(0, buf->IndexOf(" ") + 1);
 		cons_buf->fathername = buf->Substring(0, buf->IndexOf(" "));
-		buf->Remove(0, buf->IndexOf(" "));
+		buf = buf->Remove(0, buf->IndexOf(" ") + 1);
 		cons_buf->series = buf->Substring(0, buf->IndexOf(" "));
-		buf->Remove(0, buf->IndexOf(" "));
+		buf = buf->Remove(0, buf->IndexOf(" ") + 1);
 		cons_buf->number = buf->Substring(0, buf->IndexOf(" "));
-		buf->Remove(0, buf->IndexOf(" "));
-		cons_buf->tel = buf->Substring(0, buf->IndexOf(" "));
-		buf->Remove(0, buf->IndexOf(" "));
+		buf = buf->Remove(0, buf->IndexOf(" ") + 1);
+		cons_buf->tel = buf->Substring(buf->IndexOf("+7") + 2);
+		buf = buf->Remove(0, buf->IndexOf(" "));
 
 		map_buf->insert(cons_buf->tel, *cons_buf);
 	}
