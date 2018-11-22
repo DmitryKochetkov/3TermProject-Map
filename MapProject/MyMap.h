@@ -4,6 +4,13 @@ ref struct Node
 {
 	T1 key;
 	T2 value;
+
+	bool operator > (Node<T1, T2>^ t2)
+	{
+		if (String::Compare(key->ToString(), t2->key->ToString()) > 0)
+			return true;
+		else return false;
+	}
 };
 
 using namespace System;
@@ -97,4 +104,18 @@ bool MyMap<Key_Type, Value_Type>::change(Key_Type key, Value_Type value)
 			return true;
 		}
 	return false;
+}
+
+template<class Key_Type, class Value_Type>
+void MyMap<Key_Type, Value_Type>::sort()
+{
+	for (int i = 0; i < arr->Length; i++) {
+		for (int j = 0; j < arr->Length - 1; j++) {
+			if (arr[j] > arr[j + 1]) {
+				Node<Key_Type, Value_Type>^ b = arr[j];
+				arr[j] = arr[j + 1];
+				arr[j + 1] = b;
+			}
+		}
+	}
 }

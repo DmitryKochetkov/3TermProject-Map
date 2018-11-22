@@ -108,7 +108,7 @@ namespace MapProject {
 			// 
 			this->listBoxMaps->FormattingEnabled = true;
 			this->listBoxMaps->Location = System::Drawing::Point(30, 59);
-			this->listBoxMaps->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->listBoxMaps->Margin = System::Windows::Forms::Padding(2);
 			this->listBoxMaps->Name = L"listBoxMaps";
 			this->listBoxMaps->Size = System::Drawing::Size(119, 134);
 			this->listBoxMaps->TabIndex = 0;
@@ -117,7 +117,7 @@ namespace MapProject {
 			// NewDict
 			// 
 			this->NewDict->Location = System::Drawing::Point(30, 220);
-			this->NewDict->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->NewDict->Margin = System::Windows::Forms::Padding(2);
 			this->NewDict->Name = L"NewDict";
 			this->NewDict->Size = System::Drawing::Size(119, 27);
 			this->NewDict->TabIndex = 1;
@@ -138,7 +138,7 @@ namespace MapProject {
 			// 
 			this->SaveButton->Enabled = false;
 			this->SaveButton->Location = System::Drawing::Point(159, 253);
-			this->SaveButton->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->SaveButton->Margin = System::Windows::Forms::Padding(2);
 			this->SaveButton->Name = L"SaveButton";
 			this->SaveButton->Size = System::Drawing::Size(137, 27);
 			this->SaveButton->TabIndex = 4;
@@ -149,7 +149,7 @@ namespace MapProject {
 			// OpenButton
 			// 
 			this->OpenButton->Location = System::Drawing::Point(159, 220);
-			this->OpenButton->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->OpenButton->Margin = System::Windows::Forms::Padding(2);
 			this->OpenButton->Name = L"OpenButton";
 			this->OpenButton->Size = System::Drawing::Size(137, 27);
 			this->OpenButton->TabIndex = 3;
@@ -161,7 +161,7 @@ namespace MapProject {
 			// 
 			this->DelDict->Enabled = false;
 			this->DelDict->Location = System::Drawing::Point(30, 253);
-			this->DelDict->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->DelDict->Margin = System::Windows::Forms::Padding(2);
 			this->DelDict->Name = L"DelDict";
 			this->DelDict->Size = System::Drawing::Size(119, 27);
 			this->DelDict->TabIndex = 2;
@@ -173,7 +173,7 @@ namespace MapProject {
 			// 
 			this->listBoxElements->FormattingEnabled = true;
 			this->listBoxElements->Location = System::Drawing::Point(159, 59);
-			this->listBoxElements->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->listBoxElements->Margin = System::Windows::Forms::Padding(2);
 			this->listBoxElements->Name = L"listBoxElements";
 			this->listBoxElements->Size = System::Drawing::Size(137, 134);
 			this->listBoxElements->TabIndex = 6;
@@ -192,7 +192,7 @@ namespace MapProject {
 			// 
 			this->AddButton->Enabled = false;
 			this->AddButton->Location = System::Drawing::Point(328, 95);
-			this->AddButton->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->AddButton->Margin = System::Windows::Forms::Padding(2);
 			this->AddButton->Name = L"AddButton";
 			this->AddButton->Size = System::Drawing::Size(156, 27);
 			this->AddButton->TabIndex = 6;
@@ -204,7 +204,7 @@ namespace MapProject {
 			// 
 			this->EraseButton->Enabled = false;
 			this->EraseButton->Location = System::Drawing::Point(328, 130);
-			this->EraseButton->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->EraseButton->Margin = System::Windows::Forms::Padding(2);
 			this->EraseButton->Name = L"EraseButton";
 			this->EraseButton->Size = System::Drawing::Size(156, 27);
 			this->EraseButton->TabIndex = 7;
@@ -216,7 +216,7 @@ namespace MapProject {
 			// 
 			this->SearchButton->Enabled = false;
 			this->SearchButton->Location = System::Drawing::Point(328, 220);
-			this->SearchButton->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->SearchButton->Margin = System::Windows::Forms::Padding(2);
 			this->SearchButton->Name = L"SearchButton";
 			this->SearchButton->Size = System::Drawing::Size(156, 27);
 			this->SearchButton->TabIndex = 9;
@@ -228,7 +228,7 @@ namespace MapProject {
 			// 
 			this->ChangeButton->Enabled = false;
 			this->ChangeButton->Location = System::Drawing::Point(328, 166);
-			this->ChangeButton->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->ChangeButton->Margin = System::Windows::Forms::Padding(2);
 			this->ChangeButton->Name = L"ChangeButton";
 			this->ChangeButton->Size = System::Drawing::Size(156, 27);
 			this->ChangeButton->TabIndex = 8;
@@ -240,12 +240,13 @@ namespace MapProject {
 			// 
 			this->SortButton->Enabled = false;
 			this->SortButton->Location = System::Drawing::Point(328, 253);
-			this->SortButton->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->SortButton->Margin = System::Windows::Forms::Padding(2);
 			this->SortButton->Name = L"SortButton";
 			this->SortButton->Size = System::Drawing::Size(156, 27);
 			this->SortButton->TabIndex = 10;
 			this->SortButton->Text = L"—ортировать элементы";
 			this->SortButton->UseVisualStyleBackColor = true;
+			this->SortButton->Click += gcnew System::EventHandler(this, &MainForm::SortButton_Click);
 			// 
 			// saveFileDialog1
 			// 
@@ -261,7 +262,7 @@ namespace MapProject {
 			// 
 			this->GetElement->Enabled = false;
 			this->GetElement->Location = System::Drawing::Point(328, 59);
-			this->GetElement->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->GetElement->Margin = System::Windows::Forms::Padding(2);
 			this->GetElement->Name = L"GetElement";
 			this->GetElement->Size = System::Drawing::Size(156, 27);
 			this->GetElement->TabIndex = 5;
@@ -288,7 +289,7 @@ namespace MapProject {
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->NewDict);
 			this->Controls->Add(this->listBoxMaps);
-			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->Margin = System::Windows::Forms::Padding(2);
 			this->MaximizeBox = false;
 			this->Name = L"MainForm";
 			this->ShowIcon = false;
@@ -418,6 +419,12 @@ private: System::Void ChangeButton_Click(System::Object^  sender, System::EventA
 private: System::Void SearchButton_Click(System::Object^  sender, System::EventArgs^  e) {
 	SearchForm^ form = gcnew SearchForm(data[listBoxMaps->SelectedIndex]);
 	form->ShowDialog();
+}
+private: System::Void SortButton_Click(System::Object^  sender, System::EventArgs^  e) {
+	data[listBoxMaps->SelectedIndex]->sort();
+	listBoxMaps_SelectedIndexChanged(sender, e);
+	listBoxElements_SelectedIndexChanged(sender, e);
+	MessageBox::Show("Ёлементы словар€ " + data[listBoxMaps->SelectedIndex]->name + " отсортированы.", "—ортировка");
 }
 };
 }
