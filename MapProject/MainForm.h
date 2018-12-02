@@ -406,7 +406,7 @@ private: System::Void AddButton_Click(System::Object^  sender, System::EventArgs
 	listBoxMaps_SelectedIndexChanged(sender, e);
 }
 private: System::Void EraseButton_Click(System::Object^  sender, System::EventArgs^  e) {
-	data[listBoxMaps->SelectedIndex]->erase(listBoxElements->SelectedItem->ToString());
+	data[listBoxMaps->SelectedIndex]->erase(listBoxElements->SelectedItem->ToString()->Substring(3));
 	listBoxMaps_SelectedIndexChanged(sender, e);
 	listBoxElements_SelectedIndexChanged(sender, e);
 }

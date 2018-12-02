@@ -84,7 +84,7 @@ void MyMap<Key_Type, Value_Type>::erase(Key_Type key)
 {
 	int k;
 	for (int i = 0; i < arr.Length; i++)
-		if (arr[i]->key == key)
+		if (arr[i]->value.tel == key)
 		{
 			k = i;
 			break;
