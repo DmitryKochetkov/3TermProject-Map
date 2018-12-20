@@ -125,9 +125,9 @@ namespace MapProject {
 			this->groupBoxFIO->Controls->Add(this->textBoxSurname);
 			this->groupBoxFIO->Controls->Add(this->label1);
 			this->groupBoxFIO->Location = System::Drawing::Point(29, 22);
-			this->groupBoxFIO->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->groupBoxFIO->Margin = System::Windows::Forms::Padding(4);
 			this->groupBoxFIO->Name = L"groupBoxFIO";
-			this->groupBoxFIO->Padding = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->groupBoxFIO->Padding = System::Windows::Forms::Padding(4);
 			this->groupBoxFIO->Size = System::Drawing::Size(347, 158);
 			this->groupBoxFIO->TabIndex = 0;
 			this->groupBoxFIO->TabStop = false;
@@ -136,20 +136,22 @@ namespace MapProject {
 			// textBoxFathername
 			// 
 			this->textBoxFathername->Location = System::Drawing::Point(120, 111);
-			this->textBoxFathername->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->textBoxFathername->Margin = System::Windows::Forms::Padding(4);
 			this->textBoxFathername->MaxLength = 20;
 			this->textBoxFathername->Name = L"textBoxFathername";
 			this->textBoxFathername->Size = System::Drawing::Size(191, 22);
 			this->textBoxFathername->TabIndex = 3;
+			this->textBoxFathername->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &ConsumerForm::textBoxFathername_KeyPress);
 			// 
 			// textBoxName
 			// 
 			this->textBoxName->Location = System::Drawing::Point(120, 71);
-			this->textBoxName->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->textBoxName->Margin = System::Windows::Forms::Padding(4);
 			this->textBoxName->MaxLength = 15;
 			this->textBoxName->Name = L"textBoxName";
 			this->textBoxName->Size = System::Drawing::Size(191, 22);
 			this->textBoxName->TabIndex = 2;
+			this->textBoxName->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &ConsumerForm::textBoxName_KeyPress);
 			// 
 			// label3
 			// 
@@ -174,11 +176,12 @@ namespace MapProject {
 			// textBoxSurname
 			// 
 			this->textBoxSurname->Location = System::Drawing::Point(120, 32);
-			this->textBoxSurname->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->textBoxSurname->Margin = System::Windows::Forms::Padding(4);
 			this->textBoxSurname->MaxLength = 20;
 			this->textBoxSurname->Name = L"textBoxSurname";
 			this->textBoxSurname->Size = System::Drawing::Size(191, 22);
 			this->textBoxSurname->TabIndex = 1;
+			this->textBoxSurname->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &ConsumerForm::textBoxSurname_KeyPress);
 			// 
 			// label1
 			// 
@@ -194,7 +197,7 @@ namespace MapProject {
 			// 
 			this->CancelButton->DialogResult = System::Windows::Forms::DialogResult::Cancel;
 			this->CancelButton->Location = System::Drawing::Point(60, 423);
-			this->CancelButton->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->CancelButton->Margin = System::Windows::Forms::Padding(4);
 			this->CancelButton->Name = L"CancelButton";
 			this->CancelButton->Size = System::Drawing::Size(123, 31);
 			this->CancelButton->TabIndex = 100;
@@ -205,7 +208,7 @@ namespace MapProject {
 			// OKButton
 			// 
 			this->OKButton->Location = System::Drawing::Point(219, 423);
-			this->OKButton->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->OKButton->Margin = System::Windows::Forms::Padding(4);
 			this->OKButton->Name = L"OKButton";
 			this->OKButton->Size = System::Drawing::Size(123, 31);
 			this->OKButton->TabIndex = 8;
@@ -220,9 +223,9 @@ namespace MapProject {
 			this->groupBoxPassport->Controls->Add(this->label5);
 			this->groupBoxPassport->Controls->Add(this->textBoxSeries);
 			this->groupBoxPassport->Location = System::Drawing::Point(29, 198);
-			this->groupBoxPassport->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->groupBoxPassport->Margin = System::Windows::Forms::Padding(4);
 			this->groupBoxPassport->Name = L"groupBoxPassport";
-			this->groupBoxPassport->Padding = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->groupBoxPassport->Padding = System::Windows::Forms::Padding(4);
 			this->groupBoxPassport->Size = System::Drawing::Size(347, 126);
 			this->groupBoxPassport->TabIndex = 4;
 			this->groupBoxPassport->TabStop = false;
@@ -241,11 +244,12 @@ namespace MapProject {
 			// textBoxNumber
 			// 
 			this->textBoxNumber->Location = System::Drawing::Point(120, 71);
-			this->textBoxNumber->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->textBoxNumber->Margin = System::Windows::Forms::Padding(4);
 			this->textBoxNumber->MaxLength = 6;
 			this->textBoxNumber->Name = L"textBoxNumber";
 			this->textBoxNumber->Size = System::Drawing::Size(191, 22);
 			this->textBoxNumber->TabIndex = 6;
+			this->textBoxNumber->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &ConsumerForm::textBoxNumber_KeyPress);
 			// 
 			// label5
 			// 
@@ -260,11 +264,12 @@ namespace MapProject {
 			// textBoxSeries
 			// 
 			this->textBoxSeries->Location = System::Drawing::Point(120, 32);
-			this->textBoxSeries->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->textBoxSeries->Margin = System::Windows::Forms::Padding(4);
 			this->textBoxSeries->MaxLength = 4;
 			this->textBoxSeries->Name = L"textBoxSeries";
 			this->textBoxSeries->Size = System::Drawing::Size(191, 22);
 			this->textBoxSeries->TabIndex = 5;
+			this->textBoxSeries->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &ConsumerForm::textBoxSeries_KeyPress);
 			// 
 			// label6
 			// 
@@ -279,11 +284,12 @@ namespace MapProject {
 			// textBoxTelephone
 			// 
 			this->textBoxTelephone->Location = System::Drawing::Point(163, 359);
-			this->textBoxTelephone->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->textBoxTelephone->Margin = System::Windows::Forms::Padding(4);
 			this->textBoxTelephone->MaxLength = 10;
 			this->textBoxTelephone->Name = L"textBoxTelephone";
 			this->textBoxTelephone->Size = System::Drawing::Size(191, 22);
 			this->textBoxTelephone->TabIndex = 7;
+			this->textBoxTelephone->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &ConsumerForm::textBoxTelephone_KeyPress);
 			// 
 			// ConsumerForm
 			// 
@@ -297,7 +303,7 @@ namespace MapProject {
 			this->Controls->Add(this->OKButton);
 			this->Controls->Add(this->CancelButton);
 			this->Controls->Add(this->groupBoxFIO);
-			this->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->Margin = System::Windows::Forms::Padding(4);
 			this->MaximizeBox = false;
 			this->Name = L"ConsumerForm";
 			this->ShowIcon = false;
@@ -336,5 +342,43 @@ namespace MapProject {
 		}
 		this->Close();
 	}
+
+private: System::Void textBoxSurname_KeyPress(System::Object^  sender, System::Windows::Forms::KeyPressEventArgs^  e) {
+	/*if (e->KeyChar.Equals('-'))
+	{
+		e.Handled = sender->SelectionStart == 0 || tb.Text.IndexOf("-") != -1;
+		if (!e.Handled)
+		{
+			return;
+		}
+	}
+	e->Handled = !Char::IsLetter(e->KeyChar);*/
+
+	if (Char::IsLetter(e->KeyChar))
+		return;
+	if (e->KeyChar == (char)Keys::Back)
+		return;
+	e->Handled = true;
+}
+
+private: System::Void textBoxSeries_KeyPress(System::Object^  sender, System::Windows::Forms::KeyPressEventArgs^  e) {
+	if (Char::IsDigit(e->KeyChar))
+		return;
+	if (e->KeyChar == (char)Keys::Back)
+		return;
+	e->Handled = true;
+}
+private: System::Void textBoxName_KeyPress(System::Object^  sender, System::Windows::Forms::KeyPressEventArgs^  e) {
+	textBoxSurname_KeyPress(sender, e);
+}
+private: System::Void textBoxFathername_KeyPress(System::Object^  sender, System::Windows::Forms::KeyPressEventArgs^  e) {
+	textBoxSurname_KeyPress(sender, e);
+}
+private: System::Void textBoxNumber_KeyPress(System::Object^  sender, System::Windows::Forms::KeyPressEventArgs^  e) {
+	textBoxSeries_KeyPress(sender, e);
+}
+private: System::Void textBoxTelephone_KeyPress(System::Object^  sender, System::Windows::Forms::KeyPressEventArgs^  e) {
+	textBoxSeries_KeyPress(sender, e);
+}
 };
 }
